@@ -2,12 +2,12 @@
 
 MicroPython on an ESP32, one lab in four steps. The board joins the local Wi-Fi network, runs a small HTTP server on port 80, and serves a web page that a phone or laptop on the same network can open. Each task adds one more thing that page can do.
 
-| Task | What it adds | Direction | Points |
-|:--|:--|:--|:--|
-| [Task 1](#task-1--sensor-monitoring) | Temperature, humidity and distance on a self-refreshing web page | Board → browser | 15 |
-| [Task 2](#task-2--sensor-data-to-lcd) | Two toggle buttons that push sensor values onto a 16x2 LCD | Browser → board | 15 |
-| [Task 3](#task-3--web-controlled-servo) | A 0–180° slider that drives an SG90 servo | Browser → board | 20 |
-| [Task 4](#task-4--custom-text-to-lcd) | A textbox that sends any message to the LCD, scrolling if too long | Browser → board | 15 |
+| Task | What it adds | Direction |
+|:--|:--|:--|
+| [Task 1](#task-1--sensor-monitoring) | Temperature, humidity and distance on a self-refreshing web page | Board → browser |
+| [Task 2](#task-2--sensor-data-to-lcd) | Two toggle buttons that push sensor values onto a 16x2 LCD | Browser → board |
+| [Task 3](#task-3--web-controlled-servo) | A 0–180° slider that drives an SG90 servo | Browser → board |
+| [Task 4](#task-4--custom-text-to-lcd) | A textbox that sends any message to the LCD, scrolling if too long | Browser → board |
 
 Tasks 1 and 2 build on each other — Task 2 is Task 1 plus the LCD and the buttons. Tasks 3 and 4 are standalone scripts.
 
@@ -274,18 +274,3 @@ Short video showing text sent from the browser to the LCD.
 
 > **Video:** [Watch on YouTube](https://youtube.com/shorts/dOc822BkXPU?feature=share)
 
----
-
-## Repository layout
-
-```
-Lap2_Task1.py    Task 1 — sensor monitoring web page
-Lap2_Task2.py    Task 2 — sensor values to LCD via toggle buttons
-Lap2_Task3.py    Task 3 — web-controlled servo
-Lap2_Task4.py    Task 4 — custom text to LCD
-Evidence/
-  lab2_task1_pic.png    Task 1 screenshot
-README.md
-```
-
-Video evidence for Tasks 2–4 is linked in each task's Evidence section rather than committed to the repository.
