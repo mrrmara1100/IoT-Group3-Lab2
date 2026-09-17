@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="1000" height="660" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1000" height="660" fill="#ffffff"/>
+
+  <text x="500" y="44" text-anchor="middle" font-size="24" font-weight="700" fill="#1a1a1a">IoT Group 3 - Lab 2 Dashboard Wiring</text>
+  <text x="500" y="72" text-anchor="middle" font-size="14" fill="#555555">Pins match main.py</text>
+
+  <!-- ============ ESP32 ============ -->
+  <rect x="400" y="110" width="200" height="440" rx="10" fill="#1f3a5f" stroke="#0f223b" stroke-width="2"/>
+  <text x="500" y="340" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">ESP32</text>
+  <text x="500" y="362" text-anchor="middle" font-size="13" fill="#c9d6e8">DevKit</text>
+
+  <g font-size="13" fill="#ffffff">
+    <text x="410" y="164">3V3</text>
+    <text x="410" y="204">GND</text>
+    <text x="410" y="274">GPIO 33</text>
+    <text x="410" y="334">GPIO 27</text>
+    <text x="410" y="374">GPIO 26</text>
+    <text x="410" y="484">VIN (5V)</text>
+    <text x="410" y="524">GND</text>
+    <text x="590" y="204" text-anchor="end">GPIO 21 (SDA)</text>
+    <text x="590" y="244" text-anchor="end">GPIO 22 (SCL)</text>
+    <text x="590" y="424" text-anchor="end">GPIO 13</text>
+  </g>
+
+  <!-- ============ DHT11 ============ -->
+  <rect x="60" y="120" width="160" height="120" rx="8" fill="#e8f4ff" stroke="#5b8fc9" stroke-width="2"/>
+  <text x="80" y="185" font-size="18" font-weight="700" fill="#1a1a1a">DHT11</text>
+  <g font-size="12" fill="#333333" text-anchor="end">
+    <text x="212" y="154">VCC</text>
+    <text x="212" y="194">DATA</text>
+    <text x="212" y="229">GND</text>
+  </g>
+
+  <!-- ============ HC-SR04 ============ -->
+  <rect x="60" y="300" width="160" height="160" rx="8" fill="#e8f4ff" stroke="#5b8fc9" stroke-width="2"/>
+  <text x="76" y="385" font-size="18" font-weight="700" fill="#1a1a1a">HC-SR04</text>
+  <g font-size="12" fill="#333333" text-anchor="end">
+    <text x="212" y="329">VCC</text>
+    <text x="212" y="359">TRIG</text>
+    <text x="212" y="399">ECHO</text>
+    <text x="212" y="439">GND</text>
+  </g>
+
+  <!-- ============ LCD ============ -->
+  <rect x="780" y="120" width="160" height="140" rx="8" fill="#eaf7ee" stroke="#4f9d69" stroke-width="2"/>
+  <text x="930" y="190" text-anchor="end" font-size="18" font-weight="700" fill="#1a1a1a">16x2 LCD</text>
+  <text x="930" y="210" text-anchor="end" font-size="12" fill="#555555">I2C 0x27</text>
+  <g font-size="12" fill="#333333">
+    <text x="788" y="214">SDA</text>
+    <text x="788" y="244">SCL</text>
+  </g>
+
+  <!-- ============ SERVO ============ -->
+  <rect x="780" y="360" width="160" height="120" rx="8" fill="#fff3e6" stroke="#d9822b" stroke-width="2"/>
+  <text x="930" y="415" text-anchor="end" font-size="18" font-weight="700" fill="#1a1a1a">SG90</text>
+  <text x="930" y="437" text-anchor="end" font-size="18" font-weight="700" fill="#1a1a1a">Servo</text>
+  <g font-size="12" fill="#333333">
+    <text x="788" y="394">Signal</text>
+    <text x="788" y="424">VCC</text>
+    <text x="788" y="454">GND</text>
+  </g>
+
+  <!-- ============ SIGNAL WIRES ============ -->
+  <g fill="none" stroke-width="3" stroke-linejoin="round">
+    <!-- DHT11 DATA -> GPIO 33 -->
+    <polyline points="220,190 310,190 310,270 400,270" stroke="#2e9e4f"/>
+    <!-- HC-SR04 TRIG -> GPIO 27 -->
+    <polyline points="220,355 290,355 290,330 400,330" stroke="#2f6fed"/>
+    <!-- HC-SR04 ECHO -> GPIO 26 -->
+    <polyline points="220,395 340,395 340,370 400,370" stroke="#8e44ad"/>
+    <!-- LCD SDA -> GPIO 21 -->
+    <polyline points="600,200 690,200 690,210 780,210" stroke="#138d90"/>
+    <!-- LCD SCL -> GPIO 22 -->
+    <polyline points="600,240 780,240" stroke="#c0392b"/>
+    <!-- Servo signal -> GPIO 13 -->
+    <polyline points="600,420 690,420 690,390 780,390" stroke="#e67e22"/>
+  </g>
+
+  <text x="250" y="414" font-size="11" fill="#8e44ad">5V echo: use a 1k/2k divider</text>
+
+  <!-- ============ POWER STUBS ============ -->
+  <g stroke-width="3">
+    <!-- ESP32 -->
+    <line x1="400" y1="160" x2="365" y2="160" stroke="#e67e22"/>
+    <line x1="400" y1="200" x2="365" y2="200" stroke="#333333"/>
+    <line x1="400" y1="480" x2="365" y2="480" stroke="#d62728"/>
+    <line x1="400" y1="520" x2="365" y2="520" stroke="#333333"/>
+    <!-- DHT11 -->
+    <line x1="220" y1="150" x2="250" y2="150" stroke="#e67e22"/>
+    <line x1="220" y1="225" x2="250" y2="225" stroke="#333333"/>
+    <!-- HC-SR04 -->
+    <line x1="220" y1="325" x2="250" y2="325" stroke="#d62728"/>
+    <line x1="220" y1="435" x2="250" y2="435" stroke="#333333"/>
+    <!-- LCD -->
+    <line x1="780" y1="150" x2="750" y2="150" stroke="#d62728"/>
+    <line x1="780" y1="180" x2="750" y2="180" stroke="#333333"/>
+    <!-- Servo -->
+    <line x1="780" y1="420" x2="750" y2="420" stroke="#d62728"/>
+    <line x1="780" y1="450" x2="750" y2="450" stroke="#333333"/>
+  </g>
+
+  <g font-size="12" font-weight="700">
+    <text x="361" y="164" text-anchor="end" fill="#e67e22">3V3</text>
+    <text x="361" y="204" text-anchor="end" fill="#333333">GND</text>
+    <text x="361" y="484" text-anchor="end" fill="#d62728">5V</text>
+    <text x="361" y="524" text-anchor="end" fill="#333333">GND</text>
+
+    <text x="254" y="154" fill="#e67e22">3V3</text>
+    <text x="254" y="229" fill="#333333">GND</text>
+    <text x="254" y="329" fill="#d62728">5V</text>
+    <text x="254" y="439" fill="#333333">GND</text>
+
+    <text x="746" y="154" text-anchor="end" fill="#d62728">5V</text>
+    <text x="746" y="184" text-anchor="end" fill="#333333">GND</text>
+    <text x="746" y="424" text-anchor="end" fill="#d62728">5V</text>
+    <text x="746" y="454" text-anchor="end" fill="#333333">GND</text>
+  </g>
+
+  <g font-size="12" fill="#333333">
+    <text x="788" y="154">VCC</text>
+    <text x="788" y="184">GND</text>
+  </g>
+
+  <!-- ============ NOTES ============ -->
+  <rect x="60" y="578" width="880" height="62" rx="8" fill="#f5f5f5" stroke="#dddddd"/>
+  <text x="80" y="603" font-size="13" fill="#333333">Power tags with the same name are the same net: every 3V3 goes to 3V3, every 5V to VIN, every GND to GND (common ground).</text>
+  <text x="80" y="625" font-size="13" fill="#333333">If the board resets when the servo moves, power the servo from a separate 5V supply and connect its GND to the ESP32 GND.</text>
+</svg>
